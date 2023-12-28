@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Speech</title>
+
+    <script>
+        function setTimer() {
+            const myTimeout = setTimeout(convertToSpeech, 1000);
+
+            function myStopFunction() {
+                console.log("hello1");
+                clearTimeout(myTimeout);
+            }
+
+            // Uncomment the line below if you want to stop the timer after 2 seconds
+            // setTimeout(myStopFunction, 2000);
+        }
+
+        function convertToSpeech() {
+            console.log("hello3");
+            var textToSpeech = 'This is Maria with Accident Claim Helpline on a recorded line. We are reaching out because you were injured or in an accident and you may be eligible to receive compensation. We are just calling to confirm if you meet all of the criteria, before we transfer you to your legal team, I  have you in the state of (STATE), right?';
+            var utterance = new SpeechSynthesisUtterance(textToSpeech);
+            window.speechSynthesis.speak(utterance);
+            window.setInterval(10000);
+            var textToSpeech1='Now was your injury caused by a motor vehicle accident right?';
+            utterance= new SpeechSynthesisUtterance(textToSpeech1);
+            window.speechSynthesis.speak(utterance);
+            console.log("hello4");
+        }
+        window.onload=setTimer();
+    </script>
+</head>
+<body>
+    <h1>working</h1>
+</body>
+</html>
